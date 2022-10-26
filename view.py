@@ -13,7 +13,7 @@ def show_phone_book(phone_book):
         print('Телефонная книга пуста')
     else:
         for id, item in enumerate(phone_book):
-            print(*id, item)
+            print(id, *item)
 def input_path():
     path = input('Введите имя файла: ')
     return path
@@ -25,8 +25,25 @@ def input_contact():
 def input_change():
     id = int(input('Введите номер контакта: '))
     print('Что изменить?')
-    choise = input('0 - имя, 2 - телефон, 3 - отмена')
+    choise = input('0 - имя, 1 - телефон, 2 - комментарий, 3 - отмена: ')
     value = input('Введите изменения: ')
     return(id, choise, value)
+def input_remove():
+    id = int(input('Введите номер контакта: '))
+    return id
+def input_search():
+    print('Что искать?')
+    choise = input('0 - имя, 1 - телефон, 2 - комментарий: ')
+    value = input('Введите что искать: ')
+    return (choise, value)
+def output_search(search_result):
+    print('Результаты поиска: ')
+    for i in range(0, len(search_result)-1, 2):
+        print(search_result[i], *search_result[i+1])
+
+
+
+
+
 
 
